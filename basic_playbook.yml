@@ -1,7 +1,7 @@
 ---
 
 - name: Basic playbook to display name and ping managed hosts
-  hosts: cisco
+  hosts: all
   gather_facts: no
   become: no
   
