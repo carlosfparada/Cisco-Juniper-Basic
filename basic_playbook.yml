@@ -3,7 +3,6 @@
 - name: Basic playbook to display name and ping managed hosts
   hosts: all
   gather_facts: no
-  become: no
   tasks:
     - name: Debug ansible_hostname variable
       debug:
