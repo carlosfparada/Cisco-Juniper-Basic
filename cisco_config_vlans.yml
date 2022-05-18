@@ -1,0 +1,24 @@
+---
+
+- name: Cisco IOS config vlans
+  hosts: cisco
+  gather_facts: no
+  tasks:
+  - name: Cisco IOS config vlans
+    hosts: cisco
+    gather_facts: no
+    tasks:
+      cisco.ios.ios_vlans:
+      config: "{{ cisco_config }}"
+      state: merged 
+  - name: Cisco IOS get vlans 
+    cisco.ios.ios_facts:
+      gather_subset:
+        - all
+      gather_network_resources:
+        - "vlans"
+    register: _facts
+  - name: Cisco IOS debug vlans
+    debug:
+      var: _facts
+

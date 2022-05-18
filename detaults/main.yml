@@ -1,0 +1,15 @@
+---
+
+cisco_vlans:
+  - name: Vlan_101
+    vlan_id: 101
+    state: active
+    shutdown: enabled
+  - name: Vlan_102
+    vlan_id: 102
+    state: active
+    shutdown: enabled
+  - name: Vlan_103
+    vlan_id: 103
+    state: active
+    shutdown: enabled
