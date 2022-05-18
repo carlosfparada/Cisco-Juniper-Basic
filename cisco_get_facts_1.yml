@@ -15,12 +15,15 @@
         - "bgp_global"
     register: _facts
     become: true
-  - name: Set IOS facts
+  - name: Set My facts
     set_fact:
-      _myfacts: hostvars[all]
+      _myfacts: "{{ hostvars[all] }}"
   - name: Debug IOS facts
     debug:
       var: _facts
-  - name: Debug my facts
+  - name: Debug My facts
     debug:
       var: _myfacts
+  - name: Debug Facts
+    debug:
+      var: _facts,_myfacts
