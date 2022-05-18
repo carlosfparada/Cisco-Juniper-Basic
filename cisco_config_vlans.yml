@@ -5,12 +5,10 @@
   gather_facts: no
   tasks:
   - name: Cisco IOS config vlans
-    hosts: cisco
-    gather_facts: no
-    tasks:
-      cisco.ios.ios_vlans:
+    cisco.ios.ios_vlans:
       config: "{{ cisco_config }}"
       state: merged 
+    become: yes
   - name: Cisco IOS get vlans 
     cisco.ios.ios_facts:
       gather_subset:
