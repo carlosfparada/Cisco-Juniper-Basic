@@ -17,7 +17,7 @@
     become: true
   - name: Set My facts
     set_fact:
-      _myfacts: "{{ groups[all] }}"
+      _myfacts: "{{ groups['all'] }}"
   - name: Debug IOS facts
     debug:
       var: _facts
