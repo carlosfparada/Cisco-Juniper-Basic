@@ -10,9 +10,9 @@
         - all
       gather_network_resources:
       #  - "interfaces"
-        - "l3_interfaces"
-        - "vlans"
-        - "bgp_global"
+      #  - "l3_interfaces"
+      #  - "vlans"
+      #  - "bgp_global"
     register: _facts
   - name: Cisco IOS set My facts
     set_fact:
