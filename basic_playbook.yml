@@ -7,6 +7,6 @@
   tasks:
     - name: Debug ansible_hostname variable
       debug:
-        var: ansible_hostname
+        msg: "Management node: {{ ansible_host }}"
     - name: Ping Management Nodes
       ping: 
