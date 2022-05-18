@@ -4,6 +4,7 @@
   hosts: cisco
   gather_facts: no
   tasks:
+  - include_vars: defaults/main.yml
   - name: Cisco IOS config vlans
     cisco.ios.ios_vlans:
       config: "{{ cisco_config }}"
