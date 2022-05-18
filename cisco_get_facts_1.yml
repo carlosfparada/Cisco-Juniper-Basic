@@ -14,16 +14,12 @@
         - "vlans"
         - "bgp_global"
     register: _facts
-    become: true
-  - name: Set My facts
+  - name: Cisco IOS set My facts
     set_fact:
       _myfacts: "{{ groups['all'] }}"
-  - name: Debug IOS facts
+  - name: Cisco IOS debug IOS facts
     debug:
       var: _facts
-  - name: Debug My facts
+  - name: Cisco IOS debug my facts
     debug:
       var: _myfacts
-  - name: Debug Facts
-    debug:
-      var: _facts,_myfacts
