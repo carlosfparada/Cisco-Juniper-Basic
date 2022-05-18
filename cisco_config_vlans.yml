@@ -4,7 +4,8 @@
   hosts: cisco
   gather_facts: no
   tasks:
-  - include_vars: defaults/main.yml
+  - name: Include VLAN variables
+    include_vars: main.yml
   - name: Cisco IOS config vlans
     cisco.ios.ios_vlans:
       config: "{{ cisco_config }}"
@@ -20,4 +21,3 @@
   - name: Cisco IOS debug vlans
     debug:
       var: _facts
-
