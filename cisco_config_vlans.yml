@@ -8,7 +8,7 @@
     include_vars: main.yml
   - name: Cisco IOS config vlans
     cisco.ios.ios_vlans:
-      config: "{{ cisco_config }}"
+      config: "{{ cisco_vlans }}"
       state: merged 
     become: yes
   - name: Cisco IOS get vlans 
