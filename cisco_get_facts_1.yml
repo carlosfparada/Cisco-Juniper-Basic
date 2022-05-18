@@ -1,15 +1,24 @@
 ---
 
-- name: Basic playbook to display name and ping managed hosts
+- name: Cisco IOS gather facts
   hosts: cisco
   gather_facts: no
-  become: no
-  
   tasks:
+  - name: Cisco IOS gatthering facts 
+    cisco.ios.ios_facts:
+      gather_subset:
+        - all
+      gather_network_resources:
+        - "interfaces"
+        - "l3_interfaces"
+        - "vlans"
+        - "bgp_global"
+    register: _facts
+    become: true
+  - name: Set IOS facts
+    set_fact:
+      my_inventory: hostvars[all]
+  - name: Debug IOS facts
+    debug:
+      var: _facts
 
-    - name: Debug ansible_hostname
-      debug:
-        var: ansible_hostname
-  
-    - name: Ping Management Nodes
-      ping: 
