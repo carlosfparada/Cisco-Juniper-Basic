@@ -4,12 +4,9 @@
   hosts: all
   gather_facts: no
   become: no
-  
   tasks:
-
-    - name: Debug ansible_hostname
+    - name: Debug ansible_hostname variable
       debug:
         var: ansible_hostname
-  
     - name: Ping Management Nodes
       ping: 
