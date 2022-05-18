@@ -4,20 +4,19 @@
   hosts: cisco
   gather_facts: no
   tasks:
-  - name: Include VLAN variables
+  - name: Cisco IOS Include VLAN variables
     include_vars: main.yml
-  - name: Cisco IOS config vlans
+  - name: Cisco IOS Config vlans
     cisco.ios.ios_vlans:
       config: "{{ cisco_vlans }}"
       state: merged 
     become: yes
-  - name: Cisco IOS get vlans 
-    cisco.ios.ios_facts:
-      gather_subset:
-        - all
-      gather_network_resources:
-        - "vlans"
-    register: _facts
-  - name: Cisco IOS debug vlans
-    debug:
-      var: _facts
+  - name: Cisco IOS Add VLAN to l2 interfaces
+    cisco.ios.ios_l2_interfaces:
+      config: "{{ cisco_interfaces }}"
+      state: merged
+    become: true
+
+
+
+

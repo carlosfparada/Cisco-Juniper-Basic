@@ -13,3 +13,12 @@ cisco_vlans:
     vlan_id: 103
     state: active
     shutdown: enabled
+cisco_interfaces:
+  - name: Ethernet0/1
+    mode: access
+    access:
+      vlan: 101
+  - name: Ethernet0/2
+    mode: access
+    access:
+      vlan: 102
