@@ -4,7 +4,7 @@
   hosts: cisco
   gather_facts: no
   tasks:
-  - name: Cisco IOS gatthering facts 
+  - name: Cisco IOS get facts 
     cisco.ios.ios_facts:
       gather_subset:
         - all
@@ -17,8 +17,10 @@
     become: true
   - name: Set IOS facts
     set_fact:
-      my_inventory: hostvars[all]
+      _myfacts: hostvars[all]
   - name: Debug IOS facts
     debug:
       var: _facts
-
+  - name: Debug my facts
+    debug:
+      var: _myfacts
