@@ -83,6 +83,6 @@ juniper_l3_interfaces:
   - name: 'xe-0/0/0:3'
     ipv4:
     - address: 33.3.3.3/24
-  - name: 'xe-0/0/0:4'
+  - name: 'em2'
     ipv4:
-    - address: 44.4.4.4/24
+    - address: 22.2.2.2/24
