@@ -47,9 +47,9 @@ bgp:
       remote_as: '33333'
     - address: 192.168.2.22
       remote_as: '22222'
-  redistribute:
-    - connected:
-        metric: 10
+  # redistribute:
+  #   - connected:
+  #       metric: 10
   # timers:
   #   keepalive: 100
   #   holdtime: 200
