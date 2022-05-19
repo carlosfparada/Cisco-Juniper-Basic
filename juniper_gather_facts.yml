@@ -1,0 +1,29 @@
+---
+
+- name: JunOS gather facts
+  hosts: juniper
+  gather_facts: no
+  tasks:
+
+  - name: JunOS get facts 
+    junipernetworks.junos.junos_facts:
+      gather_subset:
+        - all
+      gather_network_resources:
+      #  - "interfaces"
+      #  - "l3_interfaces"
+      #  - "vlans"
+      #  - "bgp_global"
+    register: _facts
+  
+  - name: JunOS set My facts
+    set_fact:
+      _myfacts: "{{ groups['all'] }}"
+  
+  - name: JunOS debug IOS facts
+    debug:
+      var: _facts
+  
+  - name: JunOS debug my facts
+    debug:
+      var: _myfacts

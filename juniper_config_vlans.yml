@@ -1,7 +1,7 @@
 ---
 
 - name: JunOS config vlans
-  hosts: cisco_sw
+  hosts: juniper
   gather_facts: no
   tasks:
 
@@ -9,8 +9,8 @@
     include_vars: main.yml
 
   - name: JunOS Config vlans
-    cisco.ios.ios_vlans:
-      config: "{{ cisco_vlans }}"
+    junipernetworks.junos.junos_vlans:
+      config: "{{ juniper_vlans }}"
       state: merged 
     register: _vlan
     become: yes
@@ -28,8 +28,8 @@
       var: _vlan.after
 
   - name: JunOS Add VLAN to l2 interfaces
-    cisco.ios.ios_l2_interfaces:
-      config: "{{ cisco_l2_interfaces }}"
+    junipernetworks.junos.junos_l2_interfaces:
+      config: "{{ juniper_l2_interfaces }}"
       state: merged
     register: _l2_interface
     become: true
