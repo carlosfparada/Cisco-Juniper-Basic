@@ -64,15 +64,15 @@ juniper_vlans:
     vlan_id: 103
 
 juniper_l2_interfaces:
-  # - name: em2
-  #   unit: 0
-  #   access:
-  #     vlan: Vlan_101
-  # - name: xe-0/0/71:2
-  #   unit: 0
-  #   access:
-  #     vlan: Vlan_102
-  - name: em2
+  - name: 'xe-0/0/0:0'
+    unit: 0
+    access:
+      vlan: Vlan_101
+  - name: 'xe-0/0/0:1'
+    unit: 0
+    access:
+      vlan: Vlan_102
+  - name: 'xe-0/0/0:2'
     unit: 0
     access:
       vlan: Vlan_103
