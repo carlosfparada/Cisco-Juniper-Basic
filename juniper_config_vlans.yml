@@ -1,0 +1,47 @@
+---
+
+- name: JunOS config vlans
+  hosts: cisco_sw
+  gather_facts: no
+  tasks:
+
+  - name: JunOS Include VLAN variables
+    include_vars: main.yml
+
+  - name: JunOS Config vlans
+    cisco.ios.ios_vlans:
+      config: "{{ cisco_vlans }}"
+      state: merged 
+    register: _vlan
+    become: yes
+
+  - name: JunOS Debug VLAN before
+    debug:
+      var: _vlan.before
+
+  - name: JunOS Debug VLAN command
+    debug:
+      var: _vlan.commands
+
+  - name: JunOS Debug VLAN after
+    debug:
+      var: _vlan.after
+
+  - name: JunOS Add VLAN to l2 interfaces
+    cisco.ios.ios_l2_interfaces:
+      config: "{{ cisco_l2_interfaces }}"
+      state: merged
+    register: _l2_interface
+    become: true
+
+  - name: JunOS Debug VLAN before
+    debug:
+      var: _l2_interface.before
+
+  - name: JunOS Debug VLAN command
+    debug:
+      var: _l2_interface.commands
+
+  - name: JunOS Debug VLAN after
+    debug:
+      var: _l2_interface.after
