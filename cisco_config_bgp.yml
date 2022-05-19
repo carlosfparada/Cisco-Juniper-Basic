@@ -10,7 +10,7 @@
 
   - name: Cisco IOS Sets BGP config
     cisco.ios.ios_bgp_global:
-      config: "{{ bgp_ios_global_config }}"
+      config: "{{ bgp }}"
       state: replaced
     register: _bgp
     become: true

@@ -34,7 +34,7 @@ cisco_l3_interfaces:
     - address: 22.2.2.2/24
     - secondary: no
 
-bgp_ios_global_config:
+bgp:
   as_number: '45000'
   bgp:
     router_id:
