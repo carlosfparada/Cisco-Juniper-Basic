@@ -34,19 +34,19 @@ cisco_l3_interfaces:
     - address: 22.2.2.2/24
     - secondary: no
 
-bgp:
-  as_number: '55555'
+bgp_ios_global_config:
+  as_number: '45000'
   bgp:
     router_id:
-      address: "11.1.1.1"
+      address: "{{ ansible_host }}"
     log_neighbor_changes: true
   neighbor:
-    - address: 192.168.4.44
-      remote_as: '44444'
-    - address: 192.168.3.33
-      remote_as: '33333'
-    - address: 192.168.2.22
-      remote_as: '22222'
+    - address: 192.168.1.11
+      remote_as: '11000'
+    - address: 192.168.1.12
+      remote_as: '12000'
+    - address: 192.168.1.13
+      remote_as: '13000'
   # redistribute:
   #   - connected:
   #       metric: 10
