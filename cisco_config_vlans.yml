@@ -19,11 +19,11 @@
     debug:
       var: _vlan.before
 
-  - name: Debug VLAN before
+  - name: Debug VLAN command
     debug:
       var: _vlan.commands
 
-  - name: Debug VLAN before
+  - name: Debug VLAN after
     debug:
       var: _vlan.after
 
@@ -39,10 +39,10 @@
     debug:
       var: _interface.before
 
-  - name: Debug VLAN before
+  - name: Debug VLAN command
     debug:
       var: _interface.commands
 
-  - name: Debug VLAN before
+  - name: Debug VLAN after
     debug:
       var: _interface.after
