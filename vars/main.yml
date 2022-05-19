@@ -1,5 +1,6 @@
 ---
 
+# Cisco
 cisco_vlans:
   - name: Vlan_101
     vlan_id: 101
@@ -55,6 +56,7 @@ cisco_bgp:
     holdtime: 200
     min_holdtime: 150
 
+# Juniper
 juniper_vlans:    
   - name: Vlan_101
     vlan_id: 101
@@ -76,3 +78,11 @@ juniper_l2_interfaces:
     unit: 0
     access:
       vlan: Vlan_103
+
+juniper_l3_interfaces:
+  - name: 'xe-0/0/0:3'
+    ipv4:
+    - address: 33.3.3.3/24
+  - name: 'xe-0/0/0:4'
+    ipv4:
+    - address: 44.4.4.4/24
