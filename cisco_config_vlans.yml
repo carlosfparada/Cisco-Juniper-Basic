@@ -1,21 +1,21 @@
 ---
 
 - name: Cisco IOS config vlans
-  hosts: cisco
+  hosts: cisco_sw
   gather_facts: no
   tasks:
 
   - name: Cisco IOS Include VLAN variables
     include_vars: main.yml
 
-  - name: Create vlan (DEPRECATED)
-    cisco.ios.ios_vlan:
-      vlan_id: 100
-      name: vlan100
-      state: present
-      interfaces:
-        - Ethernet0/1
-        - Ethernet0/2
+  # - name: Create vlan (DEPRECATED)
+  #   cisco.ios.ios_vlan:
+  #     vlan_id: 100
+  #     name: vlan100
+  #     state: present
+  #     interfaces:
+  #       - Ethernet0/1
+  #       - Ethernet0/2
 
   - name: Cisco IOS Config vlans
     cisco.ios.ios_vlans:
