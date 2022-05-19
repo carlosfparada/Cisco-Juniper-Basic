@@ -47,10 +47,10 @@ bgp_ios_global_config:
       remote_as: '12000'
     - address: 192.168.1.13
       remote_as: '13000'
-  # redistribute:
-  #   - connected:
-  #       metric: 10
-  # timers:
-  #   keepalive: 100
-  #   holdtime: 200
-  #   min_holdtime: 150
+  redistribute:
+    - connected:
+        metric: 10
+  timers:
+    keepalive: 100
+    holdtime: 200
+    min_holdtime: 150
