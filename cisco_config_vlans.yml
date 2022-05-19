@@ -33,7 +33,6 @@
       state: merged
     register: _interface
     become: true
-    become_method: enable
 
   - name: Debug VLAN before
     debug:
