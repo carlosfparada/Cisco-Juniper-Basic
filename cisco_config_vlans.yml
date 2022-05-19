@@ -4,26 +4,24 @@
   hosts: cisco
   gather_facts: no
   tasks:
+
   - name: Cisco IOS Include VLAN variables
     include_vars: main.yml
 
-  - name: Cisco IOS Config vlans 1
-    cisco.ios.ios_vlans:
-      config: 
-        - name: Vlan_100
-          vlan_id: 100
-          state: active
-          shutdown: enabled
-      state: merged 
-    register: _vlan
-    become: yes
-
+  - name: Create vlan (DEPRECATED)
+    cisco.ios.ios_vlan:
+      vlan_id: 100
+      name: vlan100
+      state: present
+      interfaces:
+        - Ethernet0/1
+        - Ethernet0/2
 
   - name: Cisco IOS Config vlans
     cisco.ios.ios_vlans:
       config: "{{ cisco_vlans }}"
       state: merged 
-    register: :vlan
+    register: _vlan
     become: yes
 
   - name: Debug VLAN before
