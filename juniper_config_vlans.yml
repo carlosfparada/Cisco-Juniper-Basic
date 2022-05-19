@@ -5,8 +5,8 @@
   gather_facts: no
   tasks:
 
-  #- name: JunOS Include VLAN variables
-  #  include_vars: main.yml
+  - name: JunOS Include VLAN variables
+    include_vars: main.yml
 
   - name: JunOS Config vlans
     junipernetworks.junos.junos_vlans:
