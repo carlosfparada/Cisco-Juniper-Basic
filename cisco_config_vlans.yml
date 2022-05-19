@@ -10,8 +10,8 @@
   - name: Cisco IOS Config vlans 1
     cisco.ios.ios_vlans:
       config: 
-        - name: Vlan_101
-          vlan_id: 101
+        - name: Vlan_100
+          vlan_id: 100
           state: active
           shutdown: enabled
       state: merged 
