@@ -68,11 +68,11 @@ juniper_l2_interfaces:
     unit: 0
     access:
       vlan: Vlan_101
-  - name: em3
+  - name: xe-0/0/71:2
     unit: 0
     access:
       vlan: Vlan_102
-  - name: em4
+  - name: xe-0/0/71:3
     unit: 0
     access:
       vlan: Vlan_103
