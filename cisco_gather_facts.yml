@@ -4,6 +4,7 @@
   hosts: cisco
   gather_facts: no
   tasks:
+
   - name: Cisco IOS get facts 
     cisco.ios.ios_facts:
       gather_subset:
@@ -14,12 +15,15 @@
       #  - "vlans"
       #  - "bgp_global"
     register: _facts
+  
   - name: Cisco IOS set My facts
     set_fact:
       _myfacts: "{{ groups['all'] }}"
+  
   - name: Cisco IOS debug IOS facts
     debug:
       var: _facts
+  
   - name: Cisco IOS debug my facts
     debug:
       var: _myfacts
