@@ -34,7 +34,7 @@ cisco_l3_interfaces:
     - address: 22.2.2.2/24
     - secondary: no
 
-bgp:
+cisco_bgp:
   as_number: '45000'
   bgp:
     router_id:
@@ -54,3 +54,28 @@ bgp:
     keepalive: 100
     holdtime: 200
     min_holdtime: 150
+
+juniper_vlans:    
+  - name: Vlan_101
+    vlan_id: 101
+  - name: Vlan_102
+    vlan_id: 102
+  - name: Vlan_103
+    vlan_id: 103
+
+juniper_l2_interfaces:
+  - name: em2
+    unit: 0
+    mode: access
+    access:
+      vlan: 101
+  - name: em3
+    unit: 0
+    mode: access
+    access:
+      vlan: 102
+  - name: em4
+    unit: 0
+    mode: access
+    access:
+      vlan: 103

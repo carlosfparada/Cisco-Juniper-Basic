@@ -18,7 +18,7 @@
             ---
             ansible_host: xxx.xxx.xxx.xxx
             ansible_network_os: junos
-            ansible_connection: httpapi
+            ansible_connection: netconf
 
 - Create Credentials for the managed nodes
     - set priviledge escalation
