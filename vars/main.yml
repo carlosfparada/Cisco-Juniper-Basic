@@ -33,3 +33,24 @@ cisco_l3_interfaces:
     ipv4:
     - address: 22.2.2.2/24
     - secondary: no
+
+bgp:
+  as_number: '55555'
+  bgp:
+    router_id:
+      address: "11.1.1.1"
+    log_neighbor_changes: true
+  neighbor:
+    - address: 192.168.4.44
+      remote_as: '44444'
+    - address: 192.168.3.33
+      remote_as: '33333'
+    - address: 192.168.2.22
+      remote_as: '22222'
+  redistribute:
+    - connected:
+        metric: 10
+  timers:
+    keepalive: 100
+    holdtime: 200
+    min_holdtime: 150
