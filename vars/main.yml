@@ -66,16 +66,13 @@ juniper_vlans:
 juniper_l2_interfaces:
   - name: em2
     unit: 0
-    mode: access
     access:
       vlan: 101
   - name: em3
     unit: 0
-    mode: access
     access:
       vlan: 102
   - name: em4
     unit: 0
-    mode: access
     access:
       vlan: 103
