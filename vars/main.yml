@@ -72,7 +72,7 @@ juniper_l2_interfaces:
   #   unit: 0
   #   access:
   #     vlan: Vlan_102
-  - name: 'xe-0/0/71:3'
+  - name: em2
     unit: 0
     access:
       vlan: Vlan_103
