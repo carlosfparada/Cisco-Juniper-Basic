@@ -80,10 +80,10 @@ juniper_l2_interfaces:
       vlan: Vlan_103
 
 juniper_l3_interfaces:
-  # - name: 'xe-0/0/0:3'
-  #   unit: 0
-  #   ipv4:
-  #   - address: 33.3.3.3/24
+  - name: 'xe-0/0/0:3'
+    unit: 0
+    ipv4:
+    - address: 33.3.3.3/24
   - name: 'em2'
     ipv4:
     - address: 22.2.2.2/24

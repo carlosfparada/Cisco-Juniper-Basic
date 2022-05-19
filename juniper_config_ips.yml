@@ -11,7 +11,7 @@
   - name: JunOS Sets IP addresses
     junipernetworks.junos.junos_l3_interfaces:
       config: "{{ juniper_l3_interfaces }}"
-      state: merged
+      state: replaced
     register: _l3_interface
     become: true
 
