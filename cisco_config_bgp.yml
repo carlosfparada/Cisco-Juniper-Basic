@@ -10,8 +10,8 @@
 
   - name: Cisco IOS Sets BGP config
     cisco.ios.ios_bgp_global:
-      config: "{{ bgp }}"
-      state: merged
+      config: "{{ bgp_ios_global_config }}"
+      state: replaced
     register: _bgp
     become: true
 
