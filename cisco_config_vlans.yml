@@ -34,7 +34,6 @@
     register: _interface
     become: true
     become_method: enable
-    ansible_become_method: enable
 
   - name: Debug VLAN before
     debug:
