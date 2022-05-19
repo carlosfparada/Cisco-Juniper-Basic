@@ -50,7 +50,7 @@ bgp:
   redistribute:
     - connected:
         metric: 10
-  timers:
-    keepalive: 100
-    holdtime: 200
-    min_holdtime: 150
+  # timers:
+  #   keepalive: 100
+  #   holdtime: 200
+  #   min_holdtime: 150
