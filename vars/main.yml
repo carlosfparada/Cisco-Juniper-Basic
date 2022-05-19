@@ -14,7 +14,7 @@ cisco_vlans:
     state: active
     shutdown: enabled
 
-cisco_interfaces:
+cisco_l2_interfaces:
   - name: Ethernet0/1
     mode: access
     access:
@@ -23,3 +23,13 @@ cisco_interfaces:
     mode: access
     access:
       vlan: 102
+
+cisco_l3_interfaces:
+  - name: Ethernet0/1
+    ipv4:
+    - address: 11.1.1.1/24
+    - secondary: no
+  - name: Ethernet0/2
+    ipv4:
+    - address: 22.2.2.2/24
+    - secondary: no

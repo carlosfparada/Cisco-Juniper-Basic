@@ -15,33 +15,33 @@
     register: _vlan
     become: yes
 
-  - name: Debug VLAN before
+  - name: Cisco IOS Debug VLAN before
     debug:
       var: _vlan.before
 
-  - name: Debug VLAN command
+  - name: Cisco IOS Debug VLAN command
     debug:
       var: _vlan.commands
 
-  - name: Debug VLAN after
+  - name: Cisco IOS Debug VLAN after
     debug:
       var: _vlan.after
 
   - name: Cisco IOS Add VLAN to l2 interfaces
     cisco.ios.ios_l2_interfaces:
-      config: "{{ cisco_interfaces }}"
+      config: "{{ cisco_l2_interfaces }}"
       state: merged
-    register: _interface
+    register: _l2_interface
     become: true
 
-  - name: Debug VLAN before
+  - name: Cisco IOS Debug VLAN before
     debug:
-      var: _interface.before
+      var: _l2_interface.before
 
-  - name: Debug VLAN command
+  - name: Cisco IOS Debug VLAN command
     debug:
-      var: _interface.commands
+      var: _l2_interface.commands
 
-  - name: Debug VLAN after
+  - name: Cisco IOS Debug VLAN after
     debug:
-      var: _interface.after
+      var: _l2_interface.after
