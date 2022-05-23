@@ -10,7 +10,7 @@
       config: 
         - name: "{{ vlan_name | default ('Vlan100') }}"
           vlan_id: "{{ vlan_id | default(100) }}"
-          state: "{{ vlan_state | default(enabled) }}"
+          state: "{{ vlan_state | default('active') }}" # active, suspend
           shutdown: enabled
   - name: Cisco IOS Debug VLAN command
     debug:
