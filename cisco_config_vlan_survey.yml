@@ -8,10 +8,12 @@
   - name: Cisco IOS Config vlan
     cisco.ios.ios_vlans:
       config: 
-        - name: "{{ vlan_name | default ('Vlan100') }}"
+        - name: "{{ vlan_name | default('Vlan100') }}"
           vlan_id: "{{ vlan_id | default(100) }}"
           state: "{{ vlan_state | default('active') }}" # active, suspend
           shutdown: enabled
+    register: _vlan
+    
   - name: Cisco IOS Debug VLAN command
     debug:
       var: _vlan.commands
