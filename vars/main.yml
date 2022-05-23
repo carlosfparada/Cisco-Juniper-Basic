@@ -96,6 +96,7 @@ juniper_bgp:
   log_updown: true
   groups:
   - name: internal
+    type: internal
     peer_as: '45000'
     local_as:
       as_num: '45000'
