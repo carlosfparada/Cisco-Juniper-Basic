@@ -10,7 +10,7 @@
 
   - name: JunOS Sets BGP config
     junipernetworks.junos.junos_bgp_global:
-      config: "{{ juniper_bgp }}"
+      config: "{{ juniper_bgp_new }}"
       state: merged
     register: _bgp
     become: true
