@@ -94,6 +94,7 @@ juniper_bgp:
   log_updown: true
   groups:
   - name: internal
+    peer_as: '45000'
     neighbors:
       - neighbor_address: 192.168.1.11
         peer_as: '45000'
