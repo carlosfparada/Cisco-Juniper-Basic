@@ -89,11 +89,11 @@ juniper_l3_interfaces:
     - address: 22.2.2.2/24
 
 juniper_bgp:
-  as_number: 45001
-  #local_as:
-  #  as_num: 45001
-  #local_address: "{{ ansible_host }}"
-  # log_updown: true
+  as_number: 45000
+  local_as:
+    as_num: 45000
+  local_address: "{{ ansible_host }}"
+  log_updown: true
   # groups:
   # - name: ext
   #   type: external
