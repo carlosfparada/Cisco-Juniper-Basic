@@ -104,6 +104,6 @@ juniper_bgp:
         peer_as: '13000'
   bfd_liveness_detection:
     detection_time:
-      threshold: 200
+      threshold: 600
     holddown_interval: 200
     minimum_interval: 150
