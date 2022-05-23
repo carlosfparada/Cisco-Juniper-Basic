@@ -106,6 +106,6 @@ juniper_bgp:
   #     set: yes
   bfd_liveness_detection:
     detection_time:
-      threshold: 100
+      threshold: 200
     holddown_interval: 200
     minimum_interval: 150
