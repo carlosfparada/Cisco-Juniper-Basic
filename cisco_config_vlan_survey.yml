@@ -13,7 +13,12 @@
           state: "{{ vlan_state | default('active') }}" # active, suspend
           shutdown: enabled
     register: _vlan
-    
+    become: yes
+
+  - name: Cisco IOS Debug VLAN before
+    debug:
+      var: _vlan.before
+
   - name: Cisco IOS Debug VLAN command
     debug:
       var: _vlan.commands
