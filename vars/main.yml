@@ -90,6 +90,8 @@ juniper_l3_interfaces:
 
 juniper_bgp:
   as_number: '45000'
+  local_as:
+    as_num: '45000'
   local_address: "{{ ansible_host }}"
   log_updown: true
   groups:
