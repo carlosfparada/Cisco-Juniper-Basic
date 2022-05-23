@@ -1,0 +1,21 @@
+---
+
+- name: Cisco IOS create vlan
+  hosts: cisco_sw
+  gather_facts: no
+  tasks:
+
+  - name: Cisco IOS Config vlan
+    cisco.ios.ios_vlans:
+      config: 
+        - name: "{{ vlan_name | default ('Vlan100') }}"
+          vlan_id: "{{ vlan_id | default(100) }}"
+          state: "{{ vlan_state | default(enabled) }}"
+          shutdown: enabled
+  - name: Cisco IOS Debug VLAN command
+    debug:
+      var: _vlan.commands
+
+  - name: Cisco IOS Debug VLAN after
+    debug:
+      var: _vlan.after
