@@ -102,7 +102,7 @@ juniper_bgp:
       - neighbor_address: 192.168.1.13
         peer_as: '13000'
   advertise_bgp_static:
-    - policy: policy1
+      policy: "static-to-bgp"
       set: yes
   bfd_liveness_detection:
     detection_time:
