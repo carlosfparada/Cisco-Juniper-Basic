@@ -11,7 +11,7 @@
         - name: "{{ vlan_name | default('Vlan100') }}"
           vlan_id: "{{ vlan_id | default(100) }}"
           state: "{{ vlan_state | default('active') }}" # active, suspend
-          shutdown: enabled
+          shutdown: enabled # sh vlan brief
     register: _vlan
     become: yes
 

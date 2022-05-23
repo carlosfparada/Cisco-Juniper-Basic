@@ -1,11 +1,13 @@
 # POC-30-05-2022
 
+# DAY 1: Introduction and Environment Setup
 
-- Presentation: Automation motivations and AAP basics
+- Presentation: Automation Motivations and AAP basics
 - Create an Execution Environment (EE)
-- Create Inventory with Cisco/Juniper nodes
+    - To support network collection 
+- Create Inventory with Cisco and Juniper Nodes
     - PoC Inventory
-    - Groups: cisco_sw, cisco_rtr, juniper_sw, juniper_rtr
+    - Groups: cisco, cisco_sw, cisco_rtr, juniper, juniper_sw, juniper_rtr
     - Hosts: cisco_sw1, cisco_rtr1, juniper_sw1, juniper_rtr1
         - add: 
             ---
@@ -19,17 +21,48 @@
             ansible_host: xxx.xxx.xxx.xxx
             ansible_network_os: junos
             ansible_connection: netconf
+- Create Credentials for the Managed Nodes
+    - Set priviledge escalation
+- Create a GIT Repository (GitHub) with a basic Playbook 
+    - basic_playbook.yml
+- Create a Project Pointing to GitHub (basic Playbook)
+- Create a Template, with Project/Inventory/Credentials
+- Run a Basic Job Template for all Management Nodes
 
-- Create Credentials for the managed nodes
-    - set priviledge escalation
-- Create a GIT Repository (GitHub) with a playbook 
-- Create a Project
-- Create a Template
-- Run Job Template
+
+# DAY 2: Cisco Use Cases
+
+- Add/Run a Cisco Gather Facts Playbook/Template
+    - cisco_gather_facts.yml
+- Add/Run a Cisco VLAN Playbook/Template
+    - cisco_config_vlan_survey.yml
+- Add/Run a Survey to the VLAN Template
+    - cisco_config_vlan_survey.yml
+- Add/Run a Cisco multi-VLANs Playbook/Template
+    - cisco_config_vlans.yml
+- Add/Run a Cisco IP config Playbook/Template
+    - cisco_config_ips.yml
+- Add/Run a Cisco BGP config Playbook/Template
+    - cisco_config_bgp.yml
 
 
-1. basic_playbook.yml
+# DAY 3: Juniper Use Cases
 
+- Add/Run Juniper Gather Facts Playbook/Template
+    - juniper_gather_facts.yml
+- Add/Run Juniper multi-VLANs Playbook/Template
+    - cisco_config_vlans.yml
+- Add/Run Juniper IP config Playbook/Template
+    - cisco_config_ips.yml
+- Add/Run Juniper BGP config Playbook/Template
+    - juniper_config_bgp.yml
+
+
+# DAY 4: Q&As and Other Topics
+
+- Conclude Pending Exercices
+- Extend any Particular Automations of Interest
+- Questions and Answers Session
 
 
 #### Juniper commands
