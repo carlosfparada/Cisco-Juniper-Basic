@@ -1,0 +1,28 @@
+---
+
+- name: JunOS config BGP
+  hosts: juniper_rtr
+  gather_facts: no
+  tasks:
+
+  - name: JunOS Include BGP variables
+    include_vars: main.yml
+
+  - name: JunOS Sets BGP config
+    junipernetworks.junos.junos_bgp_global:
+      config: "{{ cisco_bgp }}"
+      state: replaced
+    register: _bgp
+    become: true
+
+  - name: JunOS Debug BGP before
+    debug:
+      var: _bgp.before
+
+  - name: JunOS Debug BGP command
+    debug:
+      var: _bgp.commands
+
+  - name: JunOS Debug BGP after
+    debug:
+      var: _bgp.after
