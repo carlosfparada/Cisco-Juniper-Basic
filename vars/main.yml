@@ -96,7 +96,7 @@ juniper_bgp:
   log_updown: true
   groups:
   - name: ext
-    type: internal
+    type: external
   # #  local_address: "{{ ansible_host }}" 
   #   peer_as: 45000
   # #  local_as:
