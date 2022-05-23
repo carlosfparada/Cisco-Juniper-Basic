@@ -104,8 +104,8 @@ juniper_bgp:
   # advertise_bgp_static:
   #     policy: "static-to-bgp"
   #     set: yes
-  bfd_liveness_detection:
-    detection_time:
-      threshold: 200
-    holddown_interval: 200
-    minimum_interval: 150
+  # bfd_liveness_detection:
+  #   detection_time:
+  #     threshold: 200
+  #   holddown_interval: 200
+  #   minimum_interval: 150
