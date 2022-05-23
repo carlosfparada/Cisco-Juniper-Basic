@@ -96,11 +96,14 @@ juniper_bgp:
   - name: internal
     neighbors:
       - neighbor_address: 192.168.1.11
-        peer_as: '11000'
+        peer_as: '45000'
+        #peer_as: '11000'
       - neighbor_address: 192.168.1.12
-        peer_as: '12000'
+        peer_as: '45000'
+        #peer_as: '12000'
       - neighbor_address: 192.168.1.13
-        peer_as: '13000'
+        peer_as: '45000'
+        #peer_as: '13000'
   # advertise_bgp_static:
   #     policy: "static-to-bgp"
   #     set: yes
