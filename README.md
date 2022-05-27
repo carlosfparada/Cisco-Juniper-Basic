@@ -1,5 +1,10 @@
 # POC-30-05-2022
 
+- DAY 1: Introduction and Environment Setup
+- DAY 2: Cisco Use Cases
+- DAY 3: Juniper Use Cases
+- DAY 4: Q&As and Others
+
 # DAY 1: Introduction and Environment Setup
 
 - Presentation: Automation Motivations and AAP basics
@@ -58,7 +63,7 @@
     - juniper_config_bgp.yml
 
 
-# DAY 4: Q&As and Other Topics
+# DAY 4: Q&As and Others
 
 - Conclude Pending Exercices
 - Extend any Particular Automations of Interest
