@@ -26,9 +26,9 @@
             ansible_host: xxx.xxx.xxx.xxx
             ansible_network_os: junos
             ansible_connection: netconf
+- Create a Project Pointing to GitHub (basic Playbook)
 - Create a GIT Repository (GitHub) with a basic Playbook 
     - basic_playbook.yml
-- Create a Project Pointing to GitHub (basic Playbook)
 - Create an Execution Environment (EE)
     - Create Credentials quay.io: rh_ee_cparada
     - To support network collection 
