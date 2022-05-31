@@ -9,7 +9,7 @@
 
 - Presentation: Automation Motivations and AAP basics
 - Create an Execution Environment (EE)
-    - Create Credentials quay.io
+    - Create Credentials quay.io: rh_ee_cparada
     - To support network collection 
 - Create Inventory with Cisco and Juniper Nodes
     - PoC Inventory
