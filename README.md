@@ -8,9 +8,8 @@
 # DAY 1: Introduction and Environment Setup
 
 - Presentation: Automation Motivations and AAP basics
-- Create an Execution Environment (EE)
-    - Create Credentials quay.io: rh_ee_cparada
-    - To support network collection 
+- Create Credentials for the Managed Nodes
+    - Set priviledge escalation
 - Create Inventory with Cisco and Juniper Nodes
     - PoC Inventory
     - Groups: cisco, cisco_sw, cisco_rtr, juniper, juniper_sw, juniper_rtr
@@ -27,11 +26,12 @@
             ansible_host: xxx.xxx.xxx.xxx
             ansible_network_os: junos
             ansible_connection: netconf
-- Create Credentials for the Managed Nodes
-    - Set priviledge escalation
 - Create a GIT Repository (GitHub) with a basic Playbook 
     - basic_playbook.yml
 - Create a Project Pointing to GitHub (basic Playbook)
+- Create an Execution Environment (EE)
+    - Create Credentials quay.io: rh_ee_cparada
+    - To support network collection 
 - Create a Template, with Project/Inventory/Credentials
 - Run a Basic Job Template for all Management Nodes
 
