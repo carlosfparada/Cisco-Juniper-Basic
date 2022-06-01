@@ -19,7 +19,6 @@
             ansible_host: xxx.xxx.xxx.xxx
             ansible_network_os: ios
             ansible_connection: network_cli
-
     - Hosts: juniper-1, juniper-1
         - add: 
             ---
