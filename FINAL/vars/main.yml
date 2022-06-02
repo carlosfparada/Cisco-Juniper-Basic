@@ -1,0 +1,164 @@
+
+# Cisco
+cisco_vlans:
+  - name: Vlan_202
+    vlan_id: 202
+    state: active
+  - name: Vlan_203
+    vlan_id: 203
+    state: active
+  - name: Vlan_204
+    vlan_id: 204
+    state: active
+  - name: Vlan_205
+    vlan_id: 205
+    state: active
+  - name: Vlan_206
+    vlan_id: 206
+    state: active
+  - name: Vlan_207
+    vlan_id: 207
+    state: active
+
+cisco_l2_interfaces:
+  - name: Gi0/17
+    mode: access
+    access:
+      vlan: 207
+  - name: Gi0/19
+    mode: access
+    access:
+      vlan: 207
+  - name: Gi0/20
+    mode: access
+    access:
+      vlan: 207
+
+cisco_l3_interfaces:
+  - name: Gi0/0/1
+    ipv4:
+    - address: 10.1.1.1/30
+    - secondary: no
+  - name: Gi0/0/2
+    ipv4:
+    - address: 10.2.2.2/30
+    - secondary: no
+  - name: Gi0/0/3
+    ipv4:
+    - address: 10.3.3.6/30
+    - secondary: no
+
+cisco_bgp:
+  as_number: '45000'
+  bgp:
+    router_id:
+      address: "{{ ansible_host }}"
+    log_neighbor_changes: true
+  neighbor:
+    - address: 192.168.1.11
+      remote_as: '11000'
+    - address: 192.168.1.12
+      remote_as: '12000'
+    - address: 192.168.1.13
+      remote_as: '13000'
+    - address: 192.168.1.14
+      remote_as: '14000'
+    - address: 192.168.1.15
+      remote_as: '15000'
+  redistribute:
+    - connected:
+        metric: 10
+  timers:
+    keepalive: 1000
+    holdtime: 200
+    min_holdtime: 150
+
+cisco_bgp_survey:
+  as_number: 45000
+  address_family:
+    - afi: "{{ address_family }}"
+      safi: multicast
+      network:
+        - address: "{{ network_address }}"
+          mask: 255.255.255.0
+          backdoor: true
+
+cisco_bgp_addr_family:
+  as_number: 45000
+  address_family:
+    - afi: ipv6
+      safi: multicast
+      network:
+        - address: 2001:DB8:0:3::/64
+      neighbor:
+        - address: 192.168.1.11
+          activate: true
+    - afi: ipv4
+      safi: multicast
+      network:
+      - address: 198.51.110.10
+        mask: 255.255.255.255
+        backdoor: true
+      neighbor:
+        - address: 192.168.1.11
+          activate: true
+
+  # Juniper
+juniper_vlans:    
+  - name: Vlan_101
+    vlan_id: 101
+  - name: Vlan_102
+    vlan_id: 102
+  - name: Vlan_103
+    vlan_id: 103
+
+juniper_l2_interfaces:
+  # - name: 'xe-0/0/0'
+  #   unit: 0
+  #   access:
+  #     vlan: Vlan_101
+  - name: 'xe-0/0/1'
+    unit: 0
+    access:
+      vlan: Vlan_102
+  # - name: 'xe-0/0/2'
+  #   unit: 0
+  #   access:
+  #     vlan: Vlan_103
+
+juniper_l3_interfaces:
+  - name: 'xe-0/0/0'
+    unit: 0
+    ipv4:
+    - address: 10.2.2.2/30
+    - address: 172.16.2.2/30
+    - address: 192.168.2.2/30
+    ipv6:
+    - address: 2001:1000::1/64
+    - address: 2001:1001::2/64
+
+juniper_bgp:
+  as_number: 45000
+  local_address: "{{ ansible_host }}"
+  log_updown: true
+  groups:
+  - name: ext
+    type: external
+    peer_as: '11000'
+    allow:
+      - 'all'
+      - '1.1.1.0/24'
+    neighbors:
+      - neighbor_address: 192.168.1.11
+        peer_as: '11000'
+      - neighbor_address: 192.168.1.12
+        peer_as: '12000'
+      - neighbor_address: 192.168.1.13
+        peer_as: '13000'
+  advertise_bgp_static: 
+    set: true
+  bfd_liveness_detection:
+    detection_time:
+      threshold: 1000
+    holddown_interval: 200
+    minimum_interval: 150

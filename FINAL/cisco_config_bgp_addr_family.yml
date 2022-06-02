@@ -1,0 +1,32 @@
+---
+
+- name: Cisco IOS config BGP
+  hosts: cisco_rtr
+  gather_facts: no
+  tasks:
+
+  - name: Cisco IOS Include BGP variables
+    include_vars: main.yml
+
+  - name: Cisco IOS Sets BGP config address-family
+    cisco.ios.ios_bgp_address_family:
+      config: "{{ cisco_bgp_addr_family }}"
+      state: merged
+    register: _bgp
+    become: true
+
+  - name: Cisco IOS Debug BGP before
+    debug:
+      var: _bgp.before
+
+  - name: Cisco IOS Debug BGP command
+    debug:
+      var: _bgp.commands
+
+  - name: Cisco IOS Debug BGP after
+    debug:
+      var: _bgp.after
+
+  - name: Save running to startup when modified
+    cisco.ios.ios_config:
+      save_when: modified

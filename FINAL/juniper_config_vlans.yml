@@ -1,0 +1,47 @@
+---
+
+- name: JunOS config vlans
+  hosts: juniper
+  gather_facts: no
+  tasks:
+
+  - name: JunOS Include VLAN variables
+    include_vars: main.yml
+
+  - name: JunOS Config vlans
+    junipernetworks.junos.junos_vlans:
+      config: "{{ juniper_vlans }}"
+      state: merged 
+    register: _vlan
+    #become: yes
+
+  - name: JunOS Debug VLAN before
+    debug:
+      var: _vlan.before
+
+  - name: JunOS Debug VLAN command
+    debug:
+      var: _vlan.commands
+
+  - name: JunOS Debug VLAN after
+    debug:
+      var: _vlan.after
+
+  - name: JunOS Add VLAN to l2 interfaces
+    junipernetworks.junos.junos_l2_interfaces:
+      config: "{{ juniper_l2_interfaces }}"
+      state: merged
+    register: _l2_interface
+    #become: true
+
+  - name: JunOS Debug VLAN before
+    debug:
+      var: _l2_interface.before
+
+  - name: JunOS Debug VLAN command
+    debug:
+      var: _l2_interface.commands
+
+  - name: JunOS Debug VLAN after
+    debug:
+      var: _l2_interface.after
