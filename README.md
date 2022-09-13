@@ -72,13 +72,19 @@
 
 # Juniper commands
 
+> configure
+# show vlans
+# delete vlans Vlan_101
+
 > show configuration vlans 
 > show configuration interfaces
 > show configuration interfaces em2
 > configure
-- set interfaces xe-0/0/0:2 unit 0 family inet
-- delete interfaces xe-0/0/0:2 unit 0 family inet
-- set interfaces xe-0/0/0:0 unit 0 family ethernet-switching
-- delete interfaces em2 unit 0 family inet address 172.16.1.214/24
-- set interfaces em2 unit 0 family inet address 172.16.1.214/24
-- commit
+# show vlans
+# delete vlans Vlan_101
+# set interfaces xe-0/0/0:2 unit 0 family inet
+# delete interfaces xe-0/0/0:2 unit 0 family inet
+# set interfaces xe-0/0/0:0 unit 0 family ethernet-switching
+# delete interfaces em2 unit 0 family inet address 172.16.1.214/24
+# set interfaces em2 unit 0 family inet address 172.16.1.214/24
+# commit
