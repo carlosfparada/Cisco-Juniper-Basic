@@ -72,19 +72,50 @@
 
 # Juniper commands
 
-> configure
-# show vlans
-# delete vlans Vlan_101
+enter cli mode 
+# cli
 
 > show configuration vlans 
 > show configuration interfaces
 > show configuration interfaces em2
+
+enter config mode
 > configure
+
 # show vlans
+
+create/delete vlans
+# set vlans Vlan_101 vlan-id 101
 # delete vlans Vlan_101
+
+create/delete vlans on an interface
+# show interfaces
+# delete interfaces xe-0/0/0:0
+# set interfaces xe-0/0/0:0 unit 0 family inet
+
+# set interfaces xe-0/0/0:0 unit 0 family ethernet-switching vlan members Vlan_101
+# delete interfaces xe-0/0/0:0 unit 0 family ethernet-switching vlan members Vlan_101
+
+create/delete inet config
+# delete interfaces xe-0/0/0:0 unit 0 family inet
+# set interfaces xe-0/0/0:0 unit 0 family inet
+
+create/delete inet config
+# delete interfaces xe-0/0/0:0 unit 0 family ethernet-switching
+# set interfaces xe-0/0/0:0 unit 0 family ethernet-switching
+
+set family to L2 (ethernet-switching) or IP (inet)
 # set interfaces xe-0/0/0:2 unit 0 family inet
 # delete interfaces xe-0/0/0:2 unit 0 family inet
 # set interfaces xe-0/0/0:0 unit 0 family ethernet-switching
+
+set/delete IPs
 # delete interfaces em2 unit 0 family inet address 172.16.1.214/24
 # set interfaces em2 unit 0 family inet address 172.16.1.214/24
+
+show bgp commands
+# show protocols bgp
+# delete protocols bgp
+
+always after any change
 # commit
