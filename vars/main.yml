@@ -13,21 +13,21 @@ cisco_vlans:
     state: active
 
 cisco_l2_interfaces:
-  - name: Ethernet0/1
+  - name: Ethernet0/2
     mode: access
     access:
       vlan: 101
-  - name: Ethernet0/2
+  - name: Ethernet0/3
     mode: access
     access:
       vlan: 102
 
 cisco_l3_interfaces:
-  - name: Ethernet0/1
+  - name: Ethernet0/2
     ipv4:
     - address: 11.1.1.1/24
     - secondary: no
-  - name: Ethernet0/2
+  - name: Ethernet0/3
     ipv4:
     - address: 22.2.2.2/24
     - secondary: no
