@@ -10,10 +10,9 @@
       gather_subset:
         - all
       gather_network_resources:
-        - all
       # - "interfaces"
-      # - "l3_interfaces"
-      # - "vlans"
+        - "l3_interfaces"
+        - "vlans"
       # - "bgp_global"
     register: _facts
   
