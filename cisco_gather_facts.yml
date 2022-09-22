@@ -8,11 +8,12 @@
   - name: Cisco IOS get facts 
     cisco.ios.ios_facts:
       gather_subset:
-        - all
+        #- all
+        - config
       gather_network_resources:
       # - "interfaces"
-        - "l3_interfaces"
-        - "vlans"
+      #  - "l3_interfaces"
+      #  - "vlans"
       # - "bgp_global"
     register: _facts
   
