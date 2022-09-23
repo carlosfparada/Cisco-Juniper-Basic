@@ -7,7 +7,7 @@
 
     - name: Debug ansible_hostname variable
       debug:
-        msg: "Management node: {{ ansible_host }}"
+        msg: "Managed node: {{ ansible_host }}"
   
-    - name: Ping Management Nodes
+    - name: Ping Managed Nodes
       ping: 
