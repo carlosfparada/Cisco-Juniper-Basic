@@ -1,20 +1,19 @@
 ---
 
 - name: Cisco IOS gather facts
-  hosts: cisco
+  hosts: ios-rt2
   gather_facts: no
   tasks:
 
   - name: Cisco IOS get facts 
     cisco.ios.ios_facts:
       gather_subset:
-        #- all
-        - config
+        - all
       gather_network_resources:
-      # - "interfaces"
-      #  - "l3_interfaces"
-      #  - "vlans"
-      # - "bgp_global"
+        - "interfaces"
+        - "l3_interfaces"
+        - "vlans"
+        - "bgp_global"
     register: _facts
   
   - name: Cisco IOS set My facts
