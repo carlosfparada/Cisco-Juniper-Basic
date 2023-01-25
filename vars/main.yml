@@ -96,7 +96,7 @@ juniper_bgp:
   groups:
   - name: ext
     type: external
-    local_as
+    local_as:
       as_num: 45000
     #peer_as: '11000'
     #allow:
