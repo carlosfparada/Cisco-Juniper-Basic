@@ -99,6 +99,7 @@ juniper_bgp:
     neighbors:
       - neighbor_address: 192.168.1.11
         peer_as: '11000'
+        local_as: 45000
       - neighbor_address: 192.168.1.12
         peer_as: '12000'
       - neighbor_address: 192.168.1.13
