@@ -98,7 +98,6 @@ juniper_bgp:
     type: external
     local_as:
       as_num: 45000
-    peer_as: '11000'
     allow:
       - 'all'
       - '1.1.1.0/24'
