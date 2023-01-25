@@ -98,10 +98,10 @@ juniper_bgp:
     type: external
     local_as:
       as_num: 45000
-    #peer_as: '11000'
-    #allow:
-    #  - 'all'
-    #  - '1.1.1.0/24'
+    peer_as: '11000'
+    allow:
+      - 'all'
+      - '1.1.1.0/24'
     #neighbors:
     #  - neighbor_address: 192.168.1.11
     #    peer_as: '11000'
