@@ -102,9 +102,9 @@ juniper_bgp:
     allow:
       - 'all'
       - '1.1.1.0/24'
-    #neighbors:
-    #  - neighbor_address: 192.168.1.11
-    #    peer_as: '11000'
+    neighbors:
+      - neighbor_address: 192.168.1.11
+        peer_as: '11000'
     #  - neighbor_address: 192.168.1.12
     #    peer_as: '12000'
     #  - neighbor_address: 192.168.1.13
