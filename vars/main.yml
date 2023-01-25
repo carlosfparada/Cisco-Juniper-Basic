@@ -96,7 +96,7 @@ juniper_bgp:
   groups:
   - name: ext
     type: external
-    peer_as: '11000'
+    #peer_as: '11000'
     allow:
       - 'all'
       - '1.1.1.0/24'
