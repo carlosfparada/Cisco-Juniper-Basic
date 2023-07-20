@@ -2,18 +2,18 @@
 
 # Cisco
 cisco_vlans:
-  # - name: Vlan_10
-  #   vlan_id: 10
-  #   state: active
+  - name: Vlan_10
+    vlan_id: 10
+    state: active
   - name: Vlan_20
     vlan_id: 20
     state: active
   - name: Vlan_101
     vlan_id: 101
     state: active
-  # - name: Vlan_102
-  #   vlan_id: 102
-  #   state: active
+  - name: Vlan_102
+    vlan_id: 102
+    state: active
   - name: Vlan_103
     vlan_id: 103
     state: active
@@ -57,8 +57,6 @@ cisco_bgp:
     - address: 192.168.1.12
       remote_as: '12000'
     - address: 192.168.1.13
-      remote_as: '13000'
-    - address: 192.168.1.14
       remote_as: '13000'
   redistribute:
     - connected:
