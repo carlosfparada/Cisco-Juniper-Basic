@@ -1,7 +1,7 @@
 ---
 
 - name: Cisco IOS config BGP
-  hosts: cisco_rtr
+  hosts: ios-rt1
   gather_facts: no
   tasks:
 
