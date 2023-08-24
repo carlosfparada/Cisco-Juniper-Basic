@@ -30,7 +30,7 @@
   - name: Cisco IOS Add VLAN to l2 interfaces
     cisco.ios.ios_l2_interfaces:
       config: "{{ cisco_l2_interfaces }}"
-      state: merged
+      state: overridden #merged
     register: _l2_interface
     become: true
 
