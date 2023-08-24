@@ -1,7 +1,7 @@
 ---
 
 - name: Cisco IOS config IPs
-  hosts: cisco_rtr
+  hosts: ios_rt1
   gather_facts: no
   tasks:
 
