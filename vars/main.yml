@@ -61,8 +61,8 @@ cisco_bgp:
       remote_as: '12000'
     - address: 192.168.1.13
       remote_as: '13000'
-    - address: 192.168.1.14
-      remote_as: '13000'
+    # - address: 192.168.1.14
+    #   remote_as: '13000'
   redistribute:
     - connected:
         metric: 10
