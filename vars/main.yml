@@ -11,15 +11,15 @@ cisco_vlans:
   - name: Vlan_20
     vlan_id: 20
     state: active
-  - name: Vlan_101
-    vlan_id: 101
-    state: active
-  - name: Vlan_102
-    vlan_id: 102
-    state: active
-  - name: Vlan_103
-    vlan_id: 103
-    state: active
+  # - name: Vlan_101
+  #   vlan_id: 101
+  #   state: active
+  # - name: Vlan_102
+  #   vlan_id: 102
+  #   state: active
+  # - name: Vlan_103
+  #   vlan_id: 103
+  #   state: active
   # - name: Vlan_104
   #   vlan_id: 104
   #   state: active
@@ -28,15 +28,15 @@ cisco_l2_interfaces:
   - name: Ethernet0/2
     mode: access
     access:
-      vlan: 1
+      vlan: 1 #01
   - name: Ethernet0/3
     mode: access
     access:
-      vlan: 1
+      vlan: 1 #02
   - name: Ethernet1/1
     mode: access
     access:
-      vlan: 1
+      vlan: 1 #03
 
 cisco_l3_interfaces:
   - name: Ethernet0/2
