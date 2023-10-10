@@ -2,6 +2,7 @@
 
 - name: Basic playbook to display name and ping managed hosts
   hosts: all 
+  connection: local
   gather_facts: no
   tasks:
 
