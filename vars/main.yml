@@ -11,18 +11,18 @@ cisco_vlans:
   - name: Vlan_20
     vlan_id: 20
     state: active
-  # - name: Vlan_101
-  #   vlan_id: 101
-  #   state: active
-  # - name: Vlan_102
-  #   vlan_id: 102
-  #   state: active
-  # - name: Vlan_103
-  #   vlan_id: 103
-  #   state: active
-  # - name: Vlan_104
-  #   vlan_id: 104
-  #   state: active
+# - name: Vlan_101
+#   vlan_id: 101
+#   state: active
+# - name: Vlan_102
+#   vlan_id: 102
+#   state: active
+# - name: Vlan_103
+#   vlan_id: 103
+#   state: active
+# - name: Vlan_104
+#   vlan_id: 104
+#   state: active
 
 cisco_l2_interfaces:
   - name: Ethernet0/2
@@ -41,28 +41,28 @@ cisco_l2_interfaces:
 cisco_l3_interfaces:
   - name: Ethernet0/2
     ipv4:
-    - address: 10.2.2.2/24
-    - secondary: no
+      - address: 10.2.2.2/24
+      - secondary: false
   - name: Ethernet0/3
     ipv4:
-    - address: 10.3.3.3/24
-    - secondary: no
+      - address: 10.3.3.3/24
+      - secondary: false
 
 cisco_bgp:
-  as_number: '45000'
+  as_number: "45000"
   bgp:
     router_id:
       address: "{{ ansible_host }}"
     log_neighbor_changes: true
   neighbor:
     - address: 192.168.1.11
-      remote_as: '11000'
+      remote_as: "11000"
     - address: 192.168.1.12
-      remote_as: '12000'
+      remote_as: "12000"
     - address: 192.168.1.13
-      remote_as: '13000'
-    # - address: 192.168.1.14
-    #   remote_as: '13000'
+      remote_as: "13000"
+  # - address: 192.168.1.14
+  #   remote_as: '13000'
   redistribute:
     - connected:
         metric: 10
@@ -72,7 +72,7 @@ cisco_bgp:
     min_holdtime: 150
 
 # Juniper
-juniper_vlans:    
+juniper_vlans:
   - name: Vlan_101
     vlan_id: 101
   - name: Vlan_102
@@ -81,48 +81,48 @@ juniper_vlans:
     vlan_id: 103
 
 juniper_l2_interfaces:
-  - name: 'xe-0/0/0:0'
+  - name: xe-0/0/0:0
     unit: 0
     access:
       vlan: Vlan_101
-  - name: 'xe-0/0/0:1'
+  - name: xe-0/0/0:1
     unit: 0
     access:
       vlan: Vlan_102
-  - name: 'xe-0/0/0:2'
+  - name: xe-0/0/0:2
     unit: 0
     access:
       vlan: Vlan_103
 
 juniper_l3_interfaces:
-  - name: 'xe-0/0/0:3'
+  - name: xe-0/0/0:3
     unit: 0
     ipv4:
-    - address: 33.3.3.3/24
-  - name: 'em2'
+      - address: 33.3.3.3/24
+  - name: em2
     ipv4:
-    - address: 22.2.2.2/24
+      - address: 22.2.2.2/24
 
 juniper_bgp:
   as_number: 45000
   local_address: "{{ ansible_host }}"
   log_updown: true
   groups:
-  - name: ext
-    type: external
-    local_as:
-      as_num: 45000
-    allow:
-      - 'all'
-      - '1.1.1.0/24'
-    neighbors:
-      - neighbor_address: 192.168.1.11
-        peer_as: '11000'
-      - neighbor_address: 192.168.1.12
-        peer_as: '12000'
-      - neighbor_address: 192.168.1.13
-        peer_as: '13000'
-  advertise_bgp_static: 
+    - name: ext
+      type: external
+      local_as:
+        as_num: 45000
+      allow:
+        - all
+        - 1.1.1.0/24
+      neighbors:
+        - neighbor_address: 192.168.1.11
+          peer_as: "11000"
+        - neighbor_address: 192.168.1.12
+          peer_as: "12000"
+        - neighbor_address: 192.168.1.13
+          peer_as: "13000"
+  advertise_bgp_static:
     set: true
   bfd_liveness_detection:
     detection_time:

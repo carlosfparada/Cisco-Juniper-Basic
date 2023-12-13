@@ -1,28 +1,27 @@
 ---
-
 - name: JunOS config BGP
   hosts: juniper
-  gather_facts: no
+  gather_facts: false
   tasks:
 
-  - name: JunOS Include BGP variables
-    include_vars: main.yml
+    - name: JunOS Include BGP variables
+      include_vars: main.yml
 
-  - name: JunOS Sets BGP config
-    junipernetworks.junos.junos_bgp_global:
-      config: "{{ juniper_bgp }}"
-      state: merged
-    register: _bgp
+    - name: JunOS Sets BGP config
+      junipernetworks.junos.junos_bgp_global:
+        config: "{{ juniper_bgp }}"
+        state: merged
+      register: _bgp
     #become: true
 
-  - name: JunOS Debug BGP before
-    debug:
-      var: _bgp.before
+    - name: JunOS Debug BGP before
+      debug:
+        var: _bgp.before
 
-  - name: JunOS Debug BGP command
-    debug:
-      var: _bgp.commands
+    - name: JunOS Debug BGP command
+      debug:
+        var: _bgp.commands
 
-  - name: JunOS Debug BGP after
-    debug:
-      var: _bgp.after
+    - name: JunOS Debug BGP after
+      debug:
+        var: _bgp.after

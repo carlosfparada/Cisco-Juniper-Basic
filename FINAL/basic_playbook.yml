@@ -1,13 +1,11 @@
 ---
-
 - name: Basic playbook to display name and ping managed hosts
   hosts: all
-  gather_facts: no
+  gather_facts: false
   tasks:
-
     - name: Debug ansible_hostname variable
       debug:
         msg: "Management node: {{ ansible_host }}"
-  
+
     - name: Ping Management Nodes
-      ping: 
+      ping:
