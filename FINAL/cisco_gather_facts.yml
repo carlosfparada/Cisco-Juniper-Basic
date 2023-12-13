@@ -1,38 +1,38 @@
 ---
-
 - name: Cisco IOS gather facts
   hosts: cisco
-  gather_facts: no
+  gather_facts: false
   tasks:
 
-  - name: Cisco IOS get facts 
-    cisco.ios.ios_facts:
-      gather_subset:
-        - all
-      gather_network_resources:
+    - name: Cisco IOS get facts
+      cisco.ios.ios_facts:
+        gather_subset:
+          - all
+        gather_network_resources:
       #  - "interfaces"
       #  - "l3_interfaces"
       #  - "vlans"
       #  - "bgp_global"
-    register: _facts
-  
-  # - name: Cisco IOS set My facts
-  #   set_fact:
-  #     _myfacts: "{{ groups['all'] }}"
-  
-  - name: Cisco IOS debug IOS facts
-    debug:
-      var: _facts
-  
-  # - name: Cisco IOS debug my facts
-  #   debug:
-  #     var: _myfacts
+      register: _facts
 
-  # - name: Cisco IOS debug
-  #   debug:
-  #     var: _facts.ansible_facts
+    # - name: Cisco IOS set My facts
+    #   set_fact:
+    #     _myfacts: "{{ groups['all'] }}"
 
-  - name: Debug interface status
-    debug:
-      msg: "Interface: {{ item }}, Line Protocol: {{ _facts.ansible_facts.ansible_net_interfaces[item].lineprotocol | default('-') }}, Oper Status: {{ _facts.ansible_facts.ansible_net_interfaces[item].operstatus | default('-') }}"
-    loop: "{{ _facts.ansible_facts.ansible_net_interfaces | list }}"
+    - name: Cisco IOS debug IOS facts
+      debug:
+        var: _facts
+
+    # - name: Cisco IOS debug my facts
+    #   debug:
+    #     var: _myfacts
+
+    # - name: Cisco IOS debug
+    #   debug:
+    #     var: _facts.ansible_facts
+
+    - name: Debug interface status
+      debug:
+        msg: "Interface: {{ item }}, Line Protocol: {{ _facts.ansible_facts.ansible_net_interfaces[item].lineprotocol | default('-') }}, Oper Status: {{ _facts.ansible_facts.ansible_net_interfaces[item].operstatus
+          | default('-') }}"
+      loop: "{{ _facts.ansible_facts.ansible_net_interfaces | list }}"

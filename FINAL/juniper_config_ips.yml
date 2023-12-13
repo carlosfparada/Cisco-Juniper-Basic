@@ -1,28 +1,27 @@
 ---
-
 - name: JunOS config IPs
   hosts: juniper
-  gather_facts: no
+  gather_facts: false
   tasks:
 
-  - name: JnuOS Include IP variables
-    include_vars: main.yml
+    - name: JnuOS Include IP variables
+      include_vars: main.yml
 
-  - name: JunOS Sets IP addresses
-    junipernetworks.junos.junos_l3_interfaces:
-      config: "{{ juniper_l3_interfaces }}"
-      state: replaced
-    register: _l3_interface
+    - name: JunOS Sets IP addresses
+      junipernetworks.junos.junos_l3_interfaces:
+        config: "{{ juniper_l3_interfaces }}"
+        state: replaced
+      register: _l3_interface
     #become: true
 
-  - name: JunOS Debug IP before
-    debug:
-      var: _l3_interface.before
+    - name: JunOS Debug IP before
+      debug:
+        var: _l3_interface.before
 
-  - name: JunOS Debug IP command
-    debug:
-      var: _l3_interface.commands
+    - name: JunOS Debug IP command
+      debug:
+        var: _l3_interface.commands
 
-  - name: JunOS Debug IP after
-    debug:
-      var: _l3_interface.after
+    - name: JunOS Debug IP after
+      debug:
+        var: _l3_interface.after

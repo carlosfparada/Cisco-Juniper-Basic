@@ -1,28 +1,27 @@
 ---
-
 - name: Cisco IOS config BGP
   hosts: ios-rt1
-  gather_facts: no
+  gather_facts: false
   tasks:
 
-  - name: Cisco IOS Include BGP variables
-    include_vars: main.yml
+    - name: Cisco IOS Include BGP variables
+      include_vars: main.yml
 
-  - name: Cisco IOS Sets BGP config
-    cisco.ios.ios_bgp_global:
-      config: "{{ cisco_bgp }}"
-      state: replaced
-    register: _bgp
-    become: true
+    - name: Cisco IOS Sets BGP config
+      cisco.ios.ios_bgp_global:
+        config: "{{ cisco_bgp }}"
+        state: replaced
+      register: _bgp
+      become: true
 
-  - name: Cisco IOS Debug BGP before
-    debug:
-      var: _bgp.before
+    - name: Cisco IOS Debug BGP before
+      debug:
+        var: _bgp.before
 
-  - name: Cisco IOS Debug BGP command
-    debug:
-      var: _bgp.commands
+    - name: Cisco IOS Debug BGP command
+      debug:
+        var: _bgp.commands
 
-  - name: Cisco IOS Debug BGP after
-    debug:
-      var: _bgp.after
+    - name: Cisco IOS Debug BGP after
+      debug:
+        var: _bgp.after

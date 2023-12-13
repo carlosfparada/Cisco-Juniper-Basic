@@ -1,29 +1,28 @@
 ---
-
 - name: Cisco IOS gather facts
   hosts: ios-rt2
-  gather_facts: no
+  gather_facts: false
   tasks:
 
-  - name: Cisco IOS get facts 
-    cisco.ios.ios_facts:
-      gather_subset:
-        - all
-      gather_network_resources:
-        - "interfaces"
-        - "l3_interfaces"
-        - "vlans"
-        - "bgp_global"
-    register: _facts
-  
-  - name: Cisco IOS set My facts
-    set_fact:
-      _myfacts: "{{ groups['all'] }}"
-  
-  - name: Cisco IOS debug IOS facts
-    debug:
-      var: _facts
-  
-  - name: Cisco IOS debug my facts
-    debug:
-      var: _myfacts
+    - name: Cisco IOS get facts
+      cisco.ios.ios_facts:
+        gather_subset:
+          - all
+        gather_network_resources:
+          - interfaces
+          - l3_interfaces
+          - vlans
+          - bgp_global
+      register: _facts
+
+    - name: Cisco IOS set My facts
+      set_fact:
+        _myfacts: "{{ groups['all'] }}"
+
+    - name: Cisco IOS debug IOS facts
+      debug:
+        var: _facts
+
+    - name: Cisco IOS debug my facts
+      debug:
+        var: _myfacts
