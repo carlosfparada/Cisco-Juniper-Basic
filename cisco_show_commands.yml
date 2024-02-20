@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
 
-    - name: Capture and parse 'show interfaces' ntc_templates
+    - name: Capture and parse 'show interface' ntc_templates
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
@@ -19,7 +19,7 @@
       debug:
         var: _int_result1.parsed
 
-    - name: Capture and parse 'show interfaces' native
+    - name: Capture and parse 'show interface' native
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
@@ -46,7 +46,7 @@
       debug:
         var: _int_result4.parsed
 
-    - name: Capture and parse 'show interfaces' ttp
+    - name: Capture and parse 'show interface' ttp
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
