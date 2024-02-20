@@ -20,6 +20,20 @@
       debug:
         var: _int_result1.parsed
 
+    - name: Capture and parse 'show interface' ntc_templates
+      ansible.utils.cli_parse:
+        command: "show interface"
+        parser:
+          #name: ansible.netcommon.ntc_templatesa
+          name: ansible.netcommon.textfsm
+          #name: ansible.netcommon.pyats
+          #name: ansible.netcommon.native
+          template_path: templates/ios_show_interface.textfsm
+      register: _int_result1a
+    - name: Debug 'show interfaces'
+      debug:
+        var: _int_result1a.parsed
+
     - name: Capture and parse 'show interface' native
       ansible.utils.cli_parse:
         command: "show interface"
