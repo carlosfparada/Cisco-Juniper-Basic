@@ -12,7 +12,6 @@
           #name: ansible.netcommon.pyats
       register: _int_result
 
-
     - name: Debug 'show interfaces'
       debug:
         var: _int_result.parsed
