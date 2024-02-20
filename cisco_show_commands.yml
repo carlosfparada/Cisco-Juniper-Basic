@@ -27,7 +27,7 @@
           name: ansible.netcommon.textfsm
           #name: ansible.netcommon.pyats
           #name: ansible.netcommon.native
-          template_path: templates/ios_show_interface.textfsm
+          template_path: templates/ios_show_interface.textfsma
       register: _int_result1a
     - name: Debug 'show interfaces'
       debug:
