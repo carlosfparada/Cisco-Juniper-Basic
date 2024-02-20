@@ -25,10 +25,10 @@
         parser:
           name: ansible.netcommon.textfsm
           template_path: templates/ios_show_interface.textfsm
-      register: _int_result1a
+      register: _int_result2
     - name: Debug 'show interfaces'
       debug:
-        var: _int_result1a.parsed
+        var: _int_result2.parsed
 
     - name: Capture and parse 'show interface' native
       ansible.utils.cli_parse:
@@ -37,10 +37,6 @@
           name: ansible.netcommon.native
           template_path: templates/ios_show_interface.yaml
         set_fact: _int_result3
-      register: _int_result2
-    - name: Debug 'show interfaces'
-      debug:
-        var: _int_result2.parsed
     - name: Debug 'show interface'
       debug:
         var: _int_result3
