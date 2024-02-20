@@ -1,7 +1,7 @@
 ---
 
 - name: Cisco IOS gather facts
-  hosts: ios-rt2,ios-sw1
+  hosts: ios-sw1
   gather_facts: no
   tasks:
     - name: Capture and parse 'show interfaces'
