@@ -45,7 +45,6 @@
       ansible.utils.cli_parse:
         command: "show vlan"
         parser:
-          #name: ansible.netcommon.ntc_templates
           name: ansible.netcommon.pyats
       register: _int_result4
     - name: Debug 'show vlan'
