@@ -10,11 +10,11 @@
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
-          name: ansible.netcommon.ntc_templates
+          name: ansible.netcommon.ntc_templatesa
           #name: ansible.netcommon.textfsm
           #name: ansible.netcommon.pyats
           #name: ansible.netcommon.native
-          template_path: templates/ios_show_interface.textfsma
+          template_path: templates/ios_show_interface.textfsm
       register: _int_result1
     - name: Debug 'show interfaces'
       debug:
