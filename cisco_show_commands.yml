@@ -9,9 +9,8 @@
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
-          #name: ansible.netcommon.ntc_templates
-          os: ios
-          name: ansible.netcommon.pyats
+          name: ansible.netcommon.ntc_templates
+          #name: ansible.netcommon.pyats
           #name: ansible.netcommon.native
       register: _int_result
 
