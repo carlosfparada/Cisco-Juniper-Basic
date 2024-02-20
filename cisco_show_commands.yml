@@ -4,6 +4,7 @@
   hosts: ios-sw1
   gather_facts: no
   tasks:
+  
     - name: Capture and parse 'show interfaces'
       ansible.utils.cli_parse:
         command: "show interface"
