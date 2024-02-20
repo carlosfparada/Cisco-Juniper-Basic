@@ -30,3 +30,15 @@
     - name: Debug 'show vlan'
       debug:
         var: _int_result.parsed
+
+    - name: Capture and parse 'show interfaces'
+      ansible.utils.cli_parse:
+        command: "show interface"
+        parser:
+          name: ansible.netcommon.ttp
+          template_path: templates/ios_show_interface.ttp
+      register: _int_result
+
+    - name: Debug 'show interfaces'
+      debug:
+        var: _int_result.parsed
