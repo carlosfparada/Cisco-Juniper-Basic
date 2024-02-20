@@ -12,7 +12,7 @@
           #name: ansible.netcommon.pyats
       register: _int_result
 
-    - name: Capture and parse 'show interfaces'
+    - name: Capture and parse 'show vlan'
       ansible.utils.cli_parse:
         command: "show vlan"
         parser:
