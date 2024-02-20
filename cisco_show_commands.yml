@@ -14,7 +14,7 @@
 
     - name: Capture and parse 'show interfaces'
       ansible.utils.cli_parse:
-        command: "show interface"
+        command: "show vlan"
         parser:
           #name: ansible.netcommon.ntc_templates
           name: ansible.netcommon.pyats
