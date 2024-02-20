@@ -36,7 +36,7 @@
         command: "show interface"
         parser:
           name: ansible.netcommon.ttp
-          template_path: templates/ios_show_interface.ttp
+          #template_path: templates/ios_show_interface.ttp
       register: _int_result
 
     - name: Debug 'show interfaces'
