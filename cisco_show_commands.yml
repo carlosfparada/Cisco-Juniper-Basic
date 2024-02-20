@@ -12,6 +12,7 @@
           #name: ansible.netcommon.ntc_templates
           #name: ansible.netcommon.textfsm
           name: ansible.netcommon.pyats
+          os: ios
           #name: ansible.netcommon.native
       register: _int_result1
 
