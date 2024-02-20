@@ -24,7 +24,7 @@
         command: "show interface"
         parser:
           name: ansible.netcommon.native
-          template_path: templates/nxos_show_interface.yaml
+          template_path: templates/ios_show_interface.yaml
         set_fact: _int_result
 
     - name: Debug 'show interfaces'
