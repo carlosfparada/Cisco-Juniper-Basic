@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
 
-    - name: Capture and parse 'show interfaces'
+    - name: Capture and parse 'show interfaces' ntc_templates
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
@@ -18,7 +18,8 @@
     - name: Debug 'show interfaces'
       debug:
         var: _int_result.parsed
-    - name: Capture and parse 'show interfaces'
+
+    - name: Capture and parse 'show interfaces' native
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
@@ -30,7 +31,7 @@
       debug:
         var: _int_result.parsed
 
-    - name: Capture and parse 'show vlan'
+    - name: Capture and parse 'show vlan' pyats
       ansible.utils.cli_parse:
         command: "show vlan"
         parser:
@@ -42,7 +43,7 @@
       debug:
         var: _int_result.parsed
 
-    - name: Capture and parse 'show interfaces'
+    - name: Capture and parse 'show interfaces' ttp
       ansible.utils.cli_parse:
         command: "show interface"
         parser:
