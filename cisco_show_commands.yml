@@ -57,3 +57,15 @@
     - name: Debug 'show interfaces'
       debug:
         var: _int_result5.parsed
+
+    - name: Capture and parse 'show interface' textfsm
+      ansible.utils.cli_parse:
+        command: "show interface"
+        parser:
+          name: ansible.netcommon.textfsm
+          template_path: templates/ios_show_interface.textfsm
+      register: _int_result6
+
+    - name: Debug 'show interfaces'
+      debug:
+        var: _int_result6.parsed
