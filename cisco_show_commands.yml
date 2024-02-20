@@ -65,3 +65,4 @@
     - name: Debug 'show interface'
       debug:
         var: _int_result6.parsed
+
