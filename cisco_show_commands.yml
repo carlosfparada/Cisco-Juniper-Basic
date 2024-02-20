@@ -12,6 +12,11 @@
           #name: ansible.netcommon.pyats
       register: _int_result
 
+
+    - name: Debug 'show interfaces'
+      debug:
+        var: _int_result.parsed
+
     - name: Capture and parse 'show vlan'
       ansible.utils.cli_parse:
         command: "show vlan"
@@ -20,6 +25,6 @@
           name: ansible.netcommon.pyats
       register: _int_result
 
-    - name: Debug 'show interfaces'
+    - name: Debug 'show vlan'
       debug:
         var: _int_result.parsed
