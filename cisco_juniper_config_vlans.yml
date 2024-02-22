@@ -1,0 +1,69 @@
+---
+
+- name: Cisco IOS config vlans
+  hosts: cisco_sw, juniper
+  gather_facts: no
+  tasks:
+
+  - name: Cisco IOS Include VLAN variables
+    include_vars: main.yml
+
+  - name: Cisco IOS Config vlans
+    cisco.ios.ios_vlans:
+      config: "{{ cisco_vlans }}"
+      state: overridden 
+    register: _vlan
+    become: yes
+    when: ansible_network_os == "ios"
+
+  - name: JunOS Config vlans
+    junipernetworks.junos.junos_vlans:
+      config: "{{ juniper_vlans }}"
+      state: merged 
+    register: _vlan
+    become: yes
+    when: ansible_network_os == "junos"
+
+  # - name: Cisco IOS Debug VLANs before
+  #   debug:
+  #     var: _vlan.before
+
+  # - name: Cisco IOS Debug VLANs command
+  #   debug:
+  #     var: _vlan.commands
+
+  # - name: Cisco IOS Debug VLAN after
+  #   debug:
+  #     var: _vlan.after
+
+  - name: Cisco IOS Add VLAN to l2 interfaces
+    cisco.ios.ios_l2_interfaces:
+      config: "{{ cisco_l2_interfaces }}"
+      state: overridden #merged
+    register: _l2_interface
+    become: true
+    when: ansible_network_os == "ios"
+
+  - name: JunOS Add VLAN to l2 interfaces
+    junipernetworks.junos.junos_l2_interfaces:
+      config: "{{ juniper_l2_interfaces }}"
+      state: merged
+    register: _l2_interface
+    become: true
+    when: ansible_network_os == "junos"
+
+  # - name: Cisco IOS Debug VLAN before
+  #   debug:
+  #     var: _l2_interface.before
+
+  # - name: Cisco IOS Debug VLAN command
+  #   debug:
+  #     var: _l2_interface.commands
+
+  # - name: Cisco IOS Debug VLAN after
+  #   debug:
+  #     var: _l2_interface.after
+
+  # - name: Save running to startup when modified
+  #   cisco.ios.ios_config:
+  #     save_when: modified
