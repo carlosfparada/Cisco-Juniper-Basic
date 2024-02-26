@@ -1,6 +1,6 @@
 ---
 
-# Cisco&Juniper
+# Cisco&Juniper VLANs
 cisco_juniper_vlans:
   - name: Vlan_1
     vlan_id: 1
