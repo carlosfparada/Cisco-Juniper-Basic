@@ -1,7 +1,7 @@
 ---
 
 - name: Cisco IOS config vlans
-  hosts: cisco_sw, juniper
+  hosts: cisco_sw,juniper
   gather_facts: no
   tasks:
 
