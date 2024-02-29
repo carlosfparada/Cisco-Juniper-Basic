@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
 
-    # https://github.com/networktocode/ntc-templates
+    # https://github.com/networktocode/ntc-templates/tree/master/ntc_templates/templates
     - name: Capture and parse 'show interface' ntc_templates
       ansible.utils.cli_parse:
         command: "show interface"
