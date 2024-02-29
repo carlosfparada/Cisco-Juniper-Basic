@@ -59,8 +59,8 @@
         parser:
           name: ansible.netcommon.ttp
           #template_path: templates/ios_show_interface.ttp
-      register: _int_result ttp
-    - name: Debug 'show interface'
+      register: _int_result
+    - name: Debug 'show interface' ttp
       debug:
         var: _int_result.parsed
 
@@ -70,8 +70,8 @@
         parser:
           name: ansible.netcommon.ttp
           #template_path: templates/ios_show_interface.ttp
-      register: _int_result ttp with file
-    - name: Debug 'show interface'
+      register: _int_result
+    - name: Debug 'show interface' ttp with file
       debug:
         var: _int_result.parsed
 
@@ -81,7 +81,7 @@
         parser:
           name: ansible.netcommon.pyats
       register: _int_result
-    - name: Debug 'show vlan'
+    - name: Debug 'show vlan' pyats
       debug:
         var: _int_result.parsed
 
