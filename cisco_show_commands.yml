@@ -53,16 +53,6 @@
       debug:
         var: _int_result
 
-    - name: Capture and parse 'show vlan' pyats
-      ansible.utils.cli_parse:
-        command: "show vlan"
-        parser:
-          name: ansible.netcommon.pyats
-      register: _int_result
-    - name: Debug 'show vlan'
-      debug:
-        var: _int_result.parsed
-
     - name: Capture and parse 'show interface' ttp
       ansible.utils.cli_parse:
         command: "show interface"
@@ -82,6 +72,16 @@
           #template_path: templates/ios_show_interface.ttp
       register: _int_result ttp with file
     - name: Debug 'show interface'
+      debug:
+        var: _int_result.parsed
+
+    - name: Capture and parse 'show vlan' pyats
+      ansible.utils.cli_parse:
+        command: "show vlan"
+        parser:
+          name: ansible.netcommon.pyats
+      register: _int_result
+    - name: Debug 'show vlan'
       debug:
         var: _int_result.parsed
 
