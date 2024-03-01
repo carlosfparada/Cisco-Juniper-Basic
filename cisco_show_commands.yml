@@ -87,7 +87,6 @@
         command: "show vlan"
         parser:
           name: ansible.netcommon.pyats
-          template_path: templates/ios_show_interface.ttp
       register: _int_result
     - name: Debug 'show vlan' pyats
       debug:
