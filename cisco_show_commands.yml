@@ -71,6 +71,17 @@
         var: _int_result.parsed
 
   # https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers
+    - name: Capture and parse 'show interfaces' pyats
+      ansible.utils.cli_parse:
+        command: "show interfaces"
+        parser:
+          name: ansible.netcommon.pyats
+      register: _int_result
+    - name: Debug 'show vlan' pyats
+      debug:
+        var: _int_result.parsed
+
+  # https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers
     - name: Capture and parse 'show vlan' pyats
       ansible.utils.cli_parse:
         command: "show vlan"
