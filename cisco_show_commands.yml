@@ -70,6 +70,7 @@
       debug:
         var: _int_result.parsed
 
+  # https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers
     - name: Capture and parse 'show vlan' pyats
       ansible.utils.cli_parse:
         command: "show vlan"
