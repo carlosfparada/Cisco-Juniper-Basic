@@ -1,22 +1,5 @@
 ---
 
-# Cisco&Juniper VLANs
-cisco_juniper_vlans:
-  - name: Vlan_1
-    vlan_id: 1
-  - name: Vlan_10
-    vlan_id: 10
-  - name: Vlan_20
-    vlan_id: 20
-  - name: Vlan_101
-    vlan_id: 101
-  - name: Vlan_102
-    vlan_id: 102
-  - name: Vlan_103
-    vlan_id: 103
-  - name: Vlan_104
-    vlan_id: 104
-
 # Cisco
 cisco_vlans:
   - name: Vlan_1
@@ -146,3 +129,21 @@ juniper_bgp:
       threshold: 1000
     holddown_interval: 200
     minimum_interval: 150
+
+
+# Cisco&Juniper VLANs
+cisco_juniper_vlans:
+  - name: Vlan_1
+    vlan_id: 1
+  - name: Vlan_10
+    vlan_id: 10
+  - name: Vlan_20
+    vlan_id: 20
+  - name: Vlan_101
+    vlan_id: 101
+  - name: Vlan_102
+    vlan_id: 102
+  - name: Vlan_103
+    vlan_id: 103
+  - name: Vlan_104
+    vlan_id: 104
