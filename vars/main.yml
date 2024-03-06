@@ -76,26 +76,26 @@ cisco_bgp:
 
 # Juniper
 juniper_vlans:    
-  - name: Vlan_101
-    vlan_id: 101
-  - name: Vlan_102
-    vlan_id: 102
-  - name: Vlan_103
-    vlan_id: 103
+  - name: Vlan_1
+    vlan_id: 1
+  - name: Vlan_1
+    vlan_id: 1
+  - name: Vlan_1
+    vlan_id: 1
 
 juniper_l2_interfaces:
   - name: 'xe-0/0/0:0'
     unit: 0
     access:
-      vlan: Vlan_101
+      vlan: Vlan_1
   - name: 'xe-0/0/0:1'
     unit: 0
     access:
-      vlan: Vlan_102
+      vlan: Vlan_1
   - name: 'xe-0/0/0:2'
     unit: 0
     access:
-      vlan: Vlan_103
+      vlan: Vlan_1
 
 juniper_l3_interfaces:
   - name: 'xe-0/0/0:3'
