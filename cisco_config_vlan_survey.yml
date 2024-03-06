@@ -12,6 +12,7 @@
           vlan_id: "{{ vlan_id | default(100) }}"
           state: "{{ vlan_state | default('active') }}" # active, suspend
           shutdown: enabled # sh vlan brief
+      state: "{{ vlan_state | default('merged') }}"
     register: _vlan
     become: yes
 
