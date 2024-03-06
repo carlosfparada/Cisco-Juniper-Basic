@@ -97,11 +97,11 @@ juniper_l2_interfaces:
   - name: 'xe-0/0/0:0'
     unit: 0
     access:
-      vlan: Vlan_10
+      vlan: Vlan_1
   - name: 'xe-0/0/0:1'
     unit: 0
     access:
-      vlan: Vlan_10
+      vlan: Vlan_1
   - name: 'xe-0/0/0:2'
     unit: 0
     access:
