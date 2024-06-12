@@ -31,7 +31,7 @@ cisco_l2_interfaces:
   - name: Ethernet0/2
     mode: access
     access:
-      vlan: 104
+      vlan: 1
   - name: Ethernet0/3
     mode: access
     access:
