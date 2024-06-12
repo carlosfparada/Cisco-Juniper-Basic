@@ -14,18 +14,18 @@ cisco_vlans:
   - name: Vlan_100
     vlan_id: 100
     state: active
-  # - name: Vlan_101
-  #   vlan_id: 101
-  #   state: active
-  # - name: Vlan_102
-  #   vlan_id: 102
-  #   state: active
-  # - name: Vlan_103
-  #   vlan_id: 103
-  #   state: active
-  # - name: Vlan_104
-  #   vlan_id: 104
-  #   state: active
+  - name: Vlan_101
+    vlan_id: 101
+    state: active
+  - name: Vlan_102
+    vlan_id: 102
+    state: active
+  - name: Vlan_103
+    vlan_id: 103
+    state: active
+  - name: Vlan_104
+    vlan_id: 104
+    state: active
 
 cisco_l2_interfaces:
   - name: Ethernet0/2
