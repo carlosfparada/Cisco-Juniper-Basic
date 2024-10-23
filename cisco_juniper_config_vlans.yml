@@ -10,7 +10,7 @@
 
   - name: Cisco IOS Config vlans
     cisco.ios.ios_vlans:
-      config: "{{ cisco_juniper_vlans }}"
+      config: "{{ multivendor_vlans }}"
       state: overridden 
     register: _vlan
     become: yes
@@ -18,7 +18,7 @@
 
   - name: JunOS Config vlans
     junipernetworks.junos.junos_vlans:
-      config: "{{ cisco_juniper_vlans }}"
+      config: "{{ multivendor_vlans }}"
       state: overridden 
     register: _vlan
     become: yes
@@ -38,7 +38,7 @@
 
   - name: Cisco IOS Add VLAN to l2 interfaces
     cisco.ios.ios_l2_interfaces:
-      config: "{{ cisco_l2_interfaces }}"
+      config: "{{ multivendor_cisco_l2_interfaces }}"
       state: overridden #merged
     register: _l2_interface
     become: true
@@ -46,7 +46,7 @@
 
   - name: JunOS Add VLAN to l2 interfaces
     junipernetworks.junos.junos_l2_interfaces:
-      config: "{{ juniper_l2_interfaces }}"
+      config: "{{ multivendor_juniper_l2_interfaces }}"
       state: overridden
     register: _l2_interface
     become: true
