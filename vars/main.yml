@@ -144,7 +144,7 @@ juniper_bgp:
     minimum_interval: 150
 
 
-# Cisco&Juniper VLANs
+# Multivendor Cisco&Juniper VLANs
 multivendor_vlans:
   - name: Vlan_1
     vlan_id: 1
