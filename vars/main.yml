@@ -101,11 +101,11 @@ juniper_l2_interfaces:
   - name: 'xe-0/0/0:1'
     unit: 0
     access:
-      vlan: Vlan_1
+      vlan: Vlan_10
   - name: 'xe-0/0/0:2'
     unit: 0
     access:
-      vlan: Vlan_1
+      vlan: Vlan_20
 
 juniper_l3_interfaces:
   - name: 'xe-0/0/0:3'
@@ -152,16 +152,16 @@ multivendor_vlans:
     vlan_id: 10
   - name: Vlan_20
     vlan_id: 20
-  - name: Vlan_100
-    vlan_id: 100
-  - name: Vlan_101
-    vlan_id: 101
-  - name: Vlan_102
-    vlan_id: 102
-  - name: Vlan_103
-    vlan_id: 103
-  - name: Vlan_104
-    vlan_id: 104
+  # - name: Vlan_100
+  #   vlan_id: 100
+  # - name: Vlan_101
+  #   vlan_id: 101
+  # - name: Vlan_102
+  #   vlan_id: 102
+  # - name: Vlan_103
+  #   vlan_id: 103
+  # - name: Vlan_104
+  #   vlan_id: 104
 
 multivendor_cisco_l2_interfaces:
   - name: Ethernet0/2
@@ -181,11 +181,11 @@ multivendor_juniper_l2_interfaces:
   - name: 'xe-0/0/0:0'
     unit: 0
     access:
-      vlan: Vlan_1
+      vlan: Vlan_10
   - name: 'xe-0/0/0:1'
     unit: 0
     access:
-      vlan: Vlan_1
+      vlan: Vlan_20
   - name: 'xe-0/0/0:2'
     unit: 0
     access:
