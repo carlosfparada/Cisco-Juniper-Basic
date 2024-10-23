@@ -3,6 +3,7 @@
 - name: Cisco IOS config vlans
   hosts: cisco_sw,juniper
   gather_facts: no
+  ansible_command_timeout: 60
   tasks:
 
   - name: Cisco IOS Include VLAN variables
