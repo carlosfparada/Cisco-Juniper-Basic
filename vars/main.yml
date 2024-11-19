@@ -11,7 +11,6 @@ cisco_vlans:
   - name: Vlan_20
     vlan_id: 20
     state: active
-  #   state: active
   # - name: Vlan_101
   #   vlan_id: 101
   #   state: active
@@ -42,7 +41,7 @@ cisco_l2_interfaces:
 cisco_l3_interfaces:
   - name: Ethernet0/2
     ipv4:
-    - address: 10.12.12.12/241
+    - address: 10.12.12.12/24
     - secondary: no
   - name: Ethernet0/3
     ipv4:
