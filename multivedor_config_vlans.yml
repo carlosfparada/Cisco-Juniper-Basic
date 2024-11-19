@@ -13,7 +13,7 @@
   - name: Cisco IOS Config vlans
     cisco.ios.ios_vlans:
       config: "{{ multivendor_vlans }}"
-      state: overridden 
+      state: overridden
     register: _vlan
     become: yes
     when: ansible_network_os == "ios"
@@ -21,7 +21,7 @@
   - name: JunOS Config vlans
     junipernetworks.junos.junos_vlans:
       config: "{{ multivendor_vlans }}"
-      state: overridden 
+      state: overridden
     register: _vlan
     become: yes
     when: ansible_network_os == "junos"
@@ -41,7 +41,7 @@
   - name: Cisco IOS Add VLAN to l2 interfaces
     cisco.ios.ios_l2_interfaces:
       config: "{{ multivendor_cisco_l2_interfaces }}"
-      state: overridden #merged
+      state: overridden
     register: _l2_interface
     become: true
     when: ansible_network_os == "ios"
