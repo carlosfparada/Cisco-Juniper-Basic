@@ -21,9 +21,9 @@ cisco_vlans:
   # - name: Vlan_103
   #   vlan_id: 103
   #   state: active
-  - name: Vlan_104
-    vlan_id: 104
-    state: active
+  # - name: Vlan_104
+  #   vlan_id: 104
+  #   state: active
 
 cisco_l2_interfaces:
   - name: Ethernet0/2
