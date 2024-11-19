@@ -11,7 +11,7 @@
   - name: Cisco IOS Config vlans
     cisco.ios.ios_vlans:
       config: "{{ cisco_vlans }}"
-      state: overridden 
+      state: overridden
     register: _vlan
     become: yes
 
@@ -30,7 +30,7 @@
   - name: Cisco IOS Add VLAN to l2 interfaces
     cisco.ios.ios_l2_interfaces:
       config: "{{ cisco_l2_interfaces }}"
-      state: overridden #merged
+      state: overridden
     register: _l2_interface
     become: true
 
