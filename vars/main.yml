@@ -42,7 +42,7 @@ cisco_l2_interfaces:
 cisco_l3_interfaces:
   - name: Ethernet0/2
     ipv4:
-    - address: 10.12.12.12/24
+    - address: 10.12.12.12/241
     - secondary: no
   - name: Ethernet0/3
     ipv4:
