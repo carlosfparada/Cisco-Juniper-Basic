@@ -2,13 +2,13 @@
 
 # Cisco
 cisco_vlans:
-  - name: Vlan_1
+  - name: Vlan1
     vlan_id: 1
     state: active
-  - name: Vlan_10
+  - name: Vlan10
     vlan_id: 10
     state: active
-  - name: Vlan_20
+  - name: Vlan20
     vlan_id: 20
     state: active
   # - name: Vlan100
