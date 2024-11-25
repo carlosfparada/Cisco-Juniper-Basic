@@ -20,7 +20,7 @@
     set_fact:
       _myfacts: "{{ groups['all'] }}"
   
-  - name: JunOS debug IOS facts
+  - name: JunOS debug Juniper facts
     debug:
       var: _facts
   
