@@ -11,7 +11,7 @@
   - name: JunOS Config vlans
     junipernetworks.junos.junos_vlans:
       config: "{{ juniper_vlans }}"
-      state: merged 
+      state: overridden 
     register: _vlan
     become: yes
 
@@ -30,7 +30,7 @@
   - name: JunOS Add VLAN to l2 interfaces
     junipernetworks.junos.junos_l2_interfaces:
       config: "{{ juniper_l2_interfaces }}"
-      state: merged
+      state: overridden
     register: _l2_interface
     become: true
 
