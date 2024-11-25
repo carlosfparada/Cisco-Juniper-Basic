@@ -16,7 +16,7 @@ cisco_vlans:
     state: active
   - name: Vlan_102
     vlan_id: 102
-  #   state: active
+    state: active
   # - name: Vlan_103
   #   vlan_id: 103
   #   state: active
