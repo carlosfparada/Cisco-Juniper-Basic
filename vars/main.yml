@@ -23,6 +23,9 @@ cisco_vlans:
   - name: Vlan_104a
     vlan_id: 104
     state: active
+  - name: Vlan_104b
+    vlan_id: 104
+    state: active
 
 cisco_l2_interfaces:
   - name: Ethernet0/2
