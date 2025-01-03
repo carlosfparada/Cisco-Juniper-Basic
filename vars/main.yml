@@ -20,10 +20,7 @@ cisco_vlans:
   - name: Vlan_103
     vlan_id: 103
     state: active
-  - name: Vlan_104a
-    vlan_id: 104
-    state: active
-  - name: Vlan_104b
+  - name: Vlan_104
     vlan_id: 104
     state: active
 
