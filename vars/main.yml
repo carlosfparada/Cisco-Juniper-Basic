@@ -55,11 +55,11 @@ cisco_bgp:
       address: "{{ ansible_host }}"
     log_neighbor_changes: true
   neighbor:
-    - address: 192.168.1.11
+    - neighbor_address: 192.168.1.11
       remote_as: '11000'
-    - address: 192.168.1.12
+    - neighbor_address: 192.168.1.12
       remote_as: '12000'
-    - address: 192.168.1.13
+    - neighbor_address: 192.168.1.13
       remote_as: '13000'
     # - address: 192.168.1.14
     #   remote_as: '14000'
